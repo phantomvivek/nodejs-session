@@ -7,6 +7,11 @@ We will cover some basics of Node.js as well as Express:
 - Using Express as a framework to make a lot of things easier
 - Using middlewares for various functions like logging, authentication, error handling, etc.
 
+# Dependencies:
+
+1. Node version v8.12 ([NVM](https://github.com/nvm-sh/nvm))
+2. Redis [Install Redis via homebrew](https://gist.github.com/tomysmile/1b8a321e7c58499ef9f9441b2faa0aa8)
+
 # Steps to follow:
 
 1. npm install
