@@ -1,42 +1,32 @@
-//Lets start by requiring express
-const express = require("express");
-const cookieParse = require("cookie").parse;
-const port = 8000;
-const { connect } = require("./utility/redis");
-const logger = require("./utility/logger");
+//TODO: Lets start by requiring express
+//TODO: Require cookie.parse
 
-const notFoundHandler = require("./middlewares/notFoundHandler");
-const errorHandler = require("./middlewares/errorHandler");
-const middlewareLogger = require("./middlewares/logger");
-const router = require("./routes/index");
+const { connect } = require("./utility/redis");
+
+//TODO: Require all middlerwares except auth
+//TODO: Require the routes to add as a middleware
 
 //Boilerplate code
+//TODO: Define app
+
 //Setting view engine to pug, formerly jade templating engine
-const app = express();
-app.set("view engine", "pug");
-app.set("views", "./public");
+//This tells express that pug is the templating engine to be used
+//app.set("view engine", "pug");
+//This tells express that the templates will be in the public folder
+//app.set("views", "./public");
 
-app.use(middlewareLogger);
-app.use((req, res, next) => {
-  let cookieHeader = req.headers["cookie"] || "";
-  cookies = cookieParse(cookieHeader);
+//TODO: Add logger as a middleware
+//TODO: Get cookie out of headers, parse them as object via the cookie module, and attach them to request object
 
-  //Attach the cookie object to the request object so it is available in downstream middlewares
-  req.cookies = cookies;
-  next();
-});
+//TODO: Add routes to path /app
 
-app.use("/app", router);
+//TODO: Attach 404 handler
 
-//Attaching 404 handler
-app.use(notFoundHandler);
-
-//Attaching error handler
-app.use(errorHandler);
+//TODO: Attach error handler
 
 //We only start listening on the port once our redis dependency is connected
+const port = 8000;
 connect(() => {
-  app.listen(port, err => {
-    logger.info({ err: err, port: port }, "Server listening!");
-  });
+  //TODO: Listen to a port using app.listen here
+  //TODO: Log in case there is an error
 });

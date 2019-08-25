@@ -7,5 +7,6 @@ module.exports = (req, res, next) => {
     email: "vivek.shah@uber.com"
   };
 
-  res.render("index", { session: session, name: session.name });
+  //TODO: Render the index file with session and name variable instead of sending hello
+  res.send("Hello");
 };
