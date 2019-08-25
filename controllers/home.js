@@ -7,6 +7,9 @@ module.exports = (req, res, next) => {
     email: "vivek.shah@uber.com"
   };
 
+  //FIXME: Fix this with appropriate conditions! Or this will always crash
+  let name = req.session.name || "Vivek";
+
   //TODO: Render the index file with session and name variable instead of sending hello
   res.send("Hello");
 };

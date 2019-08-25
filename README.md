@@ -20,5 +20,5 @@ If you get stuck anywhere, check the completed folder for the code.
 2. middlewares/errorHandler.js
 3. middlewares/logger.js
 4. routes/index.js
-5. controllers/home.js
+5. controllers/home.js - Fix the bug
 6. public/index.pug
