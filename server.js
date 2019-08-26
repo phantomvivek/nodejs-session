@@ -16,7 +16,7 @@ const { connect } = require("./utility/redis");
 //app.set("views", "./public");
 
 //TODO: Add logger as a middleware
-//TODO: Get cookie out of headers, parse them as object via the cookie module, and attach them to request object
+//TODO (Additional): Get cookie out of headers, parse them as object via the cookie module, and attach them to request object
 
 //TODO: Add routes to path /app
 
