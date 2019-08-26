@@ -6,9 +6,7 @@ module.exports = (req, res, next) => {
 
   if (
     authCookie &&
-    /^[0-9A-F]{8}-[0-9A-F]{4}-[4][0-9A-F]{3}-[89AB][0-9A-F]{3}-[0-9A-F]{12}$/i.test(
-      authCookie
-    )
+    /^[0-9A-F]{8}-[0-9A-F]{4}-[4][0-9A-F]{3}-[89AB][0-9A-F]{3}-[0-9A-F]{12}$/i.test(authCookie)
   ) {
     //Get data out of redis
     get(authCookie, (err, result) => {
